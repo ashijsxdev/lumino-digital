@@ -120,10 +120,6 @@ A full code review surfaced and fixed the following:
 - `.navbar__burger`'s `z-index` in `responsive.css` now reuses the `--z-nav-toggle` token from `base.css` instead of a duplicated hardcoded `30`
 - Verified: HTML tags are balanced, every `<img>` has `alt`, heading order is a clean `h1 → h2 → h3` with no skipped levels, and all text/background color pairs pass WCAG AA contrast
 
-### ⚠️ Still needs your input before publishing
-- Replace `luminodigital.example.com` in the canonical/OG/Twitter URLs with your real domain (or GitHub Pages/Vercel URL) once deployed
-- Swap the `href="#"` placeholders (nav, footer, social icons, buttons) for real destinations
-
 ## 📝 Notes
 
 This is a static design showcase — buttons and links (`Get Started`, `Learn More`, `View Project`, etc.) are placeholders (`href="#"`) and are not wired to a backend.
