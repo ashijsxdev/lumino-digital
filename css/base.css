@@ -1,0 +1,148 @@
+/* =========================
+   CSS RESET
+========================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================
+   DESIGN TOKENS
+========================= */
+
+:root {
+  /* Colors */
+  --bg: #0f172a;
+  --surface: #111827;
+
+  --primary: #7c3aed;
+  --primary-hover: #6d28d9;
+  /* Same hue as --primary, lightened until it clears 4.5:1 contrast
+     against both --bg and --surface. Use this (not --primary) for
+     any small/body-size text rendered on those backgrounds. */
+  --primary-text: #b794fc;
+  /* Raw channels so rgba(var(--primary-rgb), X) can replace the
+     hand-rolled rgba(124, 58, 237, X) values that used to be
+     duplicated across a dozen rules. */
+  --primary-rgb: 124, 58, 237;
+
+  --text: #f8fafc;
+  --text-muted: #94a3b8;
+
+  --border: #1e293b;
+
+  --star-rate: #f5c04a;
+
+  --primary-soft: rgba(var(--primary-rgb), 0.12);
+
+  /* Container */
+  --container-width: 1200px;
+
+  /* Radius */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-full: 999px;
+
+  /* Typography */
+  --h1: 4rem;
+  --h2: 3rem;
+  --small: 0.875rem;
+
+  /* Spacing */
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* Section spacing (kept separate from --space-7, which is
+     also used for card padding/margins elsewhere) */
+  --section-gap: 128px;
+
+  /* Shadows (were previously hand-duplicated per component) */
+  --shadow-md: 0 18px 35px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.25);
+  --shadow-glow: 0 0 0 1px rgba(var(--primary-rgb), 0.15),
+    0 0 35px rgba(var(--primary-rgb), 0.18), 0 25px 60px rgba(0, 0, 0, 0.45);
+
+  /* z-index scale */
+  --z-nav-toggle: 30;
+  --z-nav-menu: 25;
+  --z-card-active: 5;
+}
+
+/* =========================
+   BASE
+========================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* =========================
+   ACCESSIBILITY HELPERS
+========================= */
+
+/* Visually hides content while keeping it readable by screen
+   readers (used for icon-only labels like social/brand links). */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* =========================
+   FOCUS STATES (accessibility)
+========================= */
+
+a:focus-visible,
+button:focus-visible,
+.nav-toggle:focus-visible ~ .navbar__burger {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}

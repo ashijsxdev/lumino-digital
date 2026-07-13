@@ -1,0 +1,22 @@
+/* =========================================================
+   LAYOUT.CSS
+   Core structural rules shared by every page: the centered
+   content container and default vertical rhythm between
+   sections. Component-specific layout (grids, flex, etc.)
+   lives in components.css instead.
+========================================================= */
+
+/* Centers content and caps its width at --container-width
+   (set in base.css), with a 2rem gutter on narrow viewports
+   so content never touches the screen edge. */
+.container {
+  width: min(100% - 2rem, var(--container-width));
+  margin-inline: auto;
+}
+
+/* Consistent top/bottom spacing for every <section> on the
+   page, driven by --section-gap so the whole page's rhythm
+   can be tuned from one variable (see base.css / responsive.css). */
+section {
+  padding-block: var(--section-gap);
+}

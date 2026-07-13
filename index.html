@@ -1,0 +1,855 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Lumino Digital helps startups and businesses design, build and launch modern digital products with fast, responsive and user-focused web solutions."
+    />
+
+    <meta name="author" content="Ashkan Abbasi" />
+
+    <!-- Open Graph / Facebook (link preview when shared) -->
+    <meta property="og:title" content="Lumino Digital" />
+
+    <meta
+      property="og:description"
+      content="Modern digital agency landing page built with HTML and CSS."
+    />
+
+    <meta property="og:image" content="https://luminodigital.example.com/assets/images/Preview.webp" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://luminodigital.example.com/" />
+
+    <!-- Twitter Card (link preview on Twitter/X) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Lumino Digital" />
+    <meta
+      name="twitter:description"
+      content="Modern digital agency landing page built with HTML and CSS."
+    />
+    <meta name="twitter:image" content="https://luminodigital.example.com/assets/images/Preview.webp" />
+
+    <!-- Canonical URL (avoids duplicate-content SEO issues) -->
+    <link rel="canonical" href="https://luminodigital.example.com/" />
+
+    <!-- Basic robots / theme-color (small SEO + browser-chrome polish) -->
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0f172a" />
+
+    <!-- Font Awesome (SRI hash pinned to 6.5.2's all.min.css from cdnjs) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Project Name -->
+    <title>Lumino Digital | Modern Digital Agency</title>
+
+    <!-- Icon Website -->
+    <link rel="icon" href="./favicon.ico" sizes="any" />
+    <link rel="icon" href="./assets/images/favicon.png" type="image/png" sizes="128x128" />
+    <link rel="icon" href="./assets/images/favicon.webp" type="image/webp" />
+    <link rel="apple-touch-icon" href="./assets/images/favicon.png" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/layout.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+  </head>
+  <body>
+    <!-- ==================== Header / Navbar ==================== -->
+    <header class="header">
+      <div class="container">
+        <nav class="navbar" aria-label="Main navigation">
+          <a href="./index.html" class="navbar__logo">Lumino Digital</a>
+
+          <!-- Mobile menu "checkbox hack": no JS needed, the hidden
+               checkbox's :checked state (toggled by the label below)
+               drives the menu open/close styles in responsive.css -->
+          <input
+            type="checkbox"
+            id="nav-toggle"
+            class="nav-toggle sr-only"
+            aria-controls="navbar-menu"
+          />
+          <label for="nav-toggle" class="navbar__burger" aria-label="Toggle menu">
+            <span class="navbar__burger-line"></span>
+            <span class="navbar__burger-line"></span>
+            <span class="navbar__burger-line"></span>
+          </label>
+
+          <div class="navbar__menu" id="navbar-menu">
+            <ul class="navbar__list">
+              <li class="navbar__item">
+                <a href="#services" class="navbar__link">Services</a>
+              </li>
+
+              <li class="navbar__item">
+                <a href="#projects" class="navbar__link">Projects</a>
+              </li>
+
+              <li class="navbar__item">
+                <a href="#pricing" class="navbar__link">Pricing</a>
+              </li>
+
+              <li class="navbar__item">
+                <a href="#process" class="navbar__link">Process</a>
+              </li>
+            </ul>
+
+            <div class="navbar__actions">
+              <a href="#" class="btn btn--secondary">Login</a>
+              <a href="#" class="btn btn--primary">Get Started</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- ==================== Hero ==================== -->
+      <section class="hero">
+        <div class="container">
+          <div class="hero__wrapper">
+            <div class="hero__content">
+              <span class="hero__badge">
+                <span aria-hidden="true">🚀</span> AI Powered Digital Agency
+              </span>
+
+              <h1 class="hero__title">
+                Build Modern Digital Products For
+                <span class="hero__highlight">Startups & Businesses</span>
+              </h1>
+
+              <p class="hero__description">
+                We help companies design, build and launch high-performance
+                digital experiences.
+              </p>
+
+              <div class="hero__actions">
+                <a href="#" class="btn btn--primary"> Get Started </a>
+
+                <a href="#" class="btn btn--secondary"> View Projects </a>
+              </div>
+            </div>
+
+            <div class="hero__image">
+              <img
+                fetchpriority="high"
+                src="./assets/images/lumino-dashboard.webp"
+                alt="Lumino Digital Dashboard"
+                width="1536"
+                height="1024"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== Trusted-by logos ==================== -->
+      <section class="trusted">
+        <div class="container">
+          <p class="trusted__text">Trusted by innovative companies worldwide</p>
+          <div class="trusted__logos">
+            <span class="trusted__logo"
+              ><i class="fa-brands fa-google" aria-hidden="true"></i
+              ><span class="sr-only">Google</span></span
+            >
+            <span class="trusted__logo"
+              ><i class="fa-brands fa-microsoft" aria-hidden="true"></i
+              ><span class="sr-only">Microsoft</span></span
+            >
+            <span class="trusted__logo"
+              ><i class="fa-brands fa-figma" aria-hidden="true"></i
+              ><span class="sr-only">Figma</span></span
+            >
+            <span class="trusted__logo"
+              ><i class="fa-brands fa-slack" aria-hidden="true"></i
+              ><span class="sr-only">Slack</span></span
+            >
+            <span class="trusted__logo"
+              ><i class="fa-brands fa-github" aria-hidden="true"></i
+              ><span class="sr-only">GitHub</span></span
+            >
+            <span class="trusted__logo"
+              ><i class="fa-brands fa-linkedin" aria-hidden="true"></i
+              ><span class="sr-only">LinkedIn</span></span
+            >
+            <span class="trusted__logo"
+              ><i class="fa-brands fa-amazon" aria-hidden="true"></i
+              ><span class="sr-only">Amazon</span></span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== Services ==================== -->
+      <section class="services" id="services">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Our Services</span>
+
+            <h2 class="section-title">
+              Everything You Need To Build Your
+              <span class="section-title__highlight">Digital Product</span>
+            </h2>
+
+            <p class="section-description">
+              We help startups and businesses design, develop and launch modern
+              digital experiences.
+            </p>
+          </div>
+
+          <div class="services__grid">
+            <article class="service-card card">
+              <div class="icon-badge">
+                <i class="fa-solid fa-code" aria-hidden="true"></i>
+              </div>
+
+              <h3 class="service-card__title">Web Development</h3>
+
+              <p class="service-card__description">
+                Modern, responsive websites built with the latest technologies
+                and best practices.
+              </p>
+
+              <a href="#" class="card-link">
+                Learn More
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </article>
+
+            <article class="service-card card">
+              <div class="icon-badge">
+                <i class="fa-solid fa-palette" aria-hidden="true"></i>
+              </div>
+
+              <h3 class="service-card__title">UI / UX Design</h3>
+
+              <p class="service-card__description">
+                Beautiful and intuitive interfaces focused on user experience
+                and engagement.
+              </p>
+
+              <a href="#" class="card-link">
+                Learn More
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </article>
+
+            <article class="service-card card">
+              <div class="icon-badge">
+                <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+              </div>
+
+              <h3 class="service-card__title">Digital Marketing</h3>
+
+              <p class="service-card__description">
+                Data-driven marketing strategies that help your business grow
+                faster online.
+              </p>
+
+              <a href="#" class="card-link">
+                Learn More
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </article>
+
+            <article class="service-card card">
+              <div class="icon-badge">
+                <i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
+              </div>
+
+              <h3 class="service-card__title">Mobile Apps</h3>
+
+              <p class="service-card__description">
+                Cross-platform mobile applications with modern design and high
+                performance.
+              </p>
+
+              <a href="#" class="card-link">
+                Learn More
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </article>
+
+            <article class="service-card card">
+              <div class="icon-badge">
+                <i class="fa-solid fa-gauge-high" aria-hidden="true"></i>
+              </div>
+
+              <h3 class="service-card__title">Performance</h3>
+
+              <p class="service-card__description">
+                Fast loading, optimized performance and excellent user
+                experience for every visitor.
+              </p>
+
+              <a href="#" class="card-link">
+                Learn More
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </article>
+
+            <article class="service-card card">
+              <div class="icon-badge">
+                <i class="fa-solid fa-cloud" aria-hidden="true"></i>
+              </div>
+
+              <h3 class="service-card__title">Cloud Solutions</h3>
+
+              <p class="service-card__description">
+                Secure cloud infrastructure, deployment and maintenance for
+                modern businesses.
+              </p>
+
+              <a href="#" class="card-link">
+                Learn More
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== Featured Projects ==================== -->
+      <section class="projects" id="projects">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag"> Featured Projects </span>
+
+            <h2 class="section-title">
+              Explore Our Latest
+              <span class="section-title__highlight">Creative Work</span>
+            </h2>
+
+            <p class="section-description">
+              From startups to enterprise solutions, we build modern digital
+              products that deliver exceptional user experiences and measurable
+              business results.
+            </p>
+          </div>
+
+          <div class="projects__grid">
+            <!-- Project 1 -->
+
+            <article class="project-card card">
+              <div class="project-card__image">
+                <img
+                  loading="lazy"
+                  src="./assets/images/Ecommerce-Platform.webp"
+                  alt="Ecommerce Platform"
+                  width="1536"
+                  height="1024"
+                />
+              </div>
+
+              <div class="project-card__content">
+                <span class="project-card__category"> Web Development </span>
+
+                <h3 class="project-card__title">Ecommerce Platform</h3>
+
+                <p class="project-card__description">
+                  A modern ecommerce solution with seamless shopping experience,
+                  secure payments and responsive design.
+                </p>
+
+                <a href="#" class="card-link">
+                  View Project
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 2 -->
+
+            <article class="project-card card">
+              <div class="project-card__image">
+                <img
+                  loading="lazy"
+                  src="./assets/images/Dashboard.webp"
+                  alt="Business Dashboard"
+                  width="1536"
+                  height="1024"
+                />
+              </div>
+
+              <div class="project-card__content">
+                <span class="project-card__category"> UI / UX Design </span>
+
+                <h3 class="project-card__title">Business Dashboard</h3>
+
+                <p class="project-card__description">
+                  Analytics dashboard designed to help businesses visualize data
+                  and make better decisions.
+                </p>
+
+                <a href="#" class="card-link">
+                  View Project
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 3 -->
+
+            <article class="project-card card">
+              <div class="project-card__image">
+                <img
+                  loading="lazy"
+                  src="./assets/images/Mobile-App.webp"
+                  alt="Mobile App"
+                  width="1536"
+                  height="1024"
+                />
+              </div>
+
+              <div class="project-card__content">
+                <span class="project-card__category"> Mobile App </span>
+
+                <h3 class="project-card__title">Fitness Mobile App</h3>
+
+                <p class="project-card__description">
+                  Cross-platform mobile application focused on fitness tracking,
+                  workouts and healthy lifestyle.
+                </p>
+
+                <a href="#" class="card-link">
+                  View Project
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== Process (workflow steps) ==================== -->
+      <section class="process" id="process">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag"> Our Process </span>
+
+            <h2 class="section-title">
+              How We Bring Your
+              <span class="section-title__highlight"> Ideas To Life </span>
+            </h2>
+
+            <p class="section-description">
+              A simple and transparent workflow that keeps every project
+              organized, efficient and focused on results.
+            </p>
+          </div>
+
+          <div class="process__grid">
+            <!-- Step 1 -->
+
+            <article class="process-card card">
+              <span class="process-card__number" aria-hidden="true"> 01 </span>
+
+              <div class="icon-badge">
+                <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+              </div>
+
+              <h3 class="process-card__title">Discovery</h3>
+
+              <p class="process-card__description">
+                We understand your goals, business and project requirements.
+              </p>
+            </article>
+
+            <!-- Step 2 -->
+
+            <article class="process-card card">
+              <span class="process-card__number" aria-hidden="true"> 02 </span>
+
+              <div class="icon-badge">
+                <i class="fa-solid fa-pen-ruler" aria-hidden="true"></i>
+              </div>
+
+              <h3 class="process-card__title">Planning</h3>
+
+              <p class="process-card__description">
+                We create wireframes, strategy and a clear roadmap for
+                development.
+              </p>
+            </article>
+
+            <!-- Step 3 -->
+
+            <article class="process-card card">
+              <span class="process-card__number" aria-hidden="true"> 03 </span>
+
+              <div class="icon-badge">
+                <i class="fa-solid fa-code" aria-hidden="true"></i>
+              </div>
+
+              <h3 class="process-card__title">Development</h3>
+
+              <p class="process-card__description">
+                We build high-quality products using modern technologies.
+              </p>
+            </article>
+
+            <!-- Step 4 -->
+
+            <article class="process-card card">
+              <span class="process-card__number" aria-hidden="true"> 04 </span>
+
+              <div class="icon-badge">
+                <i class="fa-solid fa-rocket" aria-hidden="true"></i>
+              </div>
+
+              <h3 class="process-card__title">Launch</h3>
+
+              <p class="process-card__description">
+                We deploy, optimize and continuously improve your digital
+                product.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== Testimonials ====================
+           Middle card is marked --active to appear centered/highlighted;
+           see .testimonial-card--active in components.css -->
+      <section class="testimonials">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag"> Testimonials </span>
+
+            <h2 class="section-title">
+              What Our
+              <span class="section-title__highlight"> Clients Say </span>
+            </h2>
+
+            <p class="section-description">
+              Hear from our clients about their experience working with us.
+            </p>
+          </div>
+          <div class="testimonials__grid">
+            <article class="testimonial-card card">
+              <div class="testimonial-card__rating" role="img" aria-label="Rated 5 out of 5 stars">
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+              </div>
+              <p class="testimonial-card__quote">
+                Working with this team completely transformed our online
+                presence. The entire process was smooth, professional and
+                exceeded our expectations.
+              </p>
+              <div class="testimonial-card__author">
+                <img
+                  loading="lazy"
+                  src="./assets/images/Profile-2.webp"
+                  alt="Sarah Johnson"
+                  class="testimonial-card__avatar"
+                  width="500"
+                  height="500"
+                />
+                <div class="testimonial-card__info">
+                  <h3 class="testimonial-card__name">Sarah Johnson</h3>
+                  <span class="testimonial-card__role">
+                    CEO, Startup Inc.
+                  </span>
+                </div>
+              </div>
+            </article>
+            <article class="testimonial-card testimonial-card--active card">
+              <div class="testimonial-card__rating" role="img" aria-label="Rated 5 out of 5 stars">
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+              </div>
+
+              <p class="testimonial-card__quote">
+                The final product exceeded our expectations. The team delivered
+                on time, communicated clearly and created a seamless user
+                experience.
+              </p>
+
+              <div class="testimonial-card__author">
+                <img
+                  loading="lazy"
+                  src="./assets/images/Profile-1.webp"
+                  alt="Michael Carter"
+                  class="testimonial-card__avatar"
+                  width="500"
+                  height="500"
+                />
+
+                <div class="testimonial-card__info">
+                  <h3 class="testimonial-card__name">Michael Carter</h3>
+
+                  <span class="testimonial-card__role">
+                    Founder, NovaTech
+                  </span>
+                </div>
+              </div>
+            </article>
+            <article class="testimonial-card card">
+              <div class="testimonial-card__rating" role="img" aria-label="Rated 5 out of 5 stars">
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+              </div>
+
+              <p class="testimonial-card__quote">
+                Their attention to detail and commitment to quality made the
+                entire process enjoyable. We would definitely work with them
+                again.
+              </p>
+
+              <div class="testimonial-card__author">
+                <img
+                  loading="lazy"
+                  src="./assets/images/Profile-3.webp"
+                  alt="Emily Roberts"
+                  class="testimonial-card__avatar"
+                  width="500"
+                  height="500"
+                />
+
+                <div class="testimonial-card__info">
+                  <h3 class="testimonial-card__name">Emily Roberts</h3>
+
+                  <span class="testimonial-card__role">
+                    Marketing Director, BrightLab
+                  </span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== Pricing ==================== -->
+      <section class="pricing" id="pricing">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag"> Pricing </span>
+            <h2 class="section-title">
+              Choose The Perfect<span class="section-title__highlight">
+                Plan
+              </span>
+            </h2>
+            <p class="section-description">
+              Flexible pricing plans designed for startups, businesses and
+              growing teams.
+            </p>
+          </div>
+          <div class="pricing__grid">
+            <article class="pricing-card card">
+              <h3 class="pricing-card__plan">Starter</h3>
+              <div class="pricing-card__price">
+                <span class="pricing-card__currency">$</span>49
+                <span class="pricing-card__period">/month</span>
+              </div>
+              <p class="pricing-card__description">
+                Perfect for freelancers and small businesses starting their
+                digital journey.
+              </p>
+              <ul class="pricing-card__features">
+                <li class="pricing-card__feature">
+                  <i class="fa-solid fa-check" aria-hidden="true"></i> Responsive Website (Up to 5
+                  Pages)
+                </li>
+                <li class="pricing-card__feature">
+                  <i class="fa-solid fa-check" aria-hidden="true"></i> Basic SEO Optimization
+                </li>
+                <li class="pricing-card__feature">
+                  <i class="fa-solid fa-check" aria-hidden="true"></i> Email Support
+                </li>
+                <li class="pricing-card__feature">
+                  <i class="fa-solid fa-check" aria-hidden="true"></i> 1 Month Maintenance
+                </li>
+              </ul>
+              <a href="#" class="btn btn--outline"> Get Started </a>
+            </article>
+            <article class="pricing-card pricing-card--popular card">
+              <span class="pricing-card__badge"> Most Popular </span>
+
+              <h3 class="pricing-card__plan">Professional</h3>
+
+              <div class="pricing-card__price">
+                <span class="pricing-card__currency">$</span>99
+                <span class="pricing-card__period">/month</span>
+              </div>
+
+              <p class="pricing-card__description">
+                Ideal for growing businesses that need advanced features and
+                continuous support.
+              </p>
+
+              <ul class="pricing-card__features">
+                <li class="pricing-card__feature">
+                  <i class="fa-solid fa-check" aria-hidden="true"></i> Responsive Website (Up to
+                  15 Pages)
+                </li>
+                <li class="pricing-card__feature">
+                  <i class="fa-solid fa-check" aria-hidden="true"></i> Advanced SEO Optimization
+                </li>
+                <li class="pricing-card__feature">
+                  <i class="fa-solid fa-check" aria-hidden="true"></i> Priority Email & Chat
+                  Support
+                </li>
+                <li class="pricing-card__feature">
+                  <i class="fa-solid fa-check" aria-hidden="true"></i> 3 Months Maintenance
+                </li>
+              </ul>
+
+              <a href="#" class="btn btn--primary"> Choose Plan </a>
+            </article>
+            <article class="pricing-card card">
+              <h3 class="pricing-card__plan">Enterprise</h3>
+
+              <div class="pricing-card__price pricing-card__price--custom">
+                Custom
+              </div>
+
+              <p class="pricing-card__description">
+                Tailored solutions for enterprises with complex requirements and
+                dedicated support.
+              </p>
+              <ul class="pricing-card__features">
+                <li class="pricing-card__feature">
+                  <i class="fa-solid fa-check" aria-hidden="true"></i> Unlimited Pages & Custom
+                  Features
+                </li>
+                <li class="pricing-card__feature">
+                  <i class="fa-solid fa-check" aria-hidden="true"></i> Full SEO & Performance
+                  Audit
+                </li>
+                <li class="pricing-card__feature">
+                  <i class="fa-solid fa-check" aria-hidden="true"></i> Dedicated Account Manager
+                </li>
+                <li class="pricing-card__feature">
+                  <i class="fa-solid fa-check" aria-hidden="true"></i> 12 Months Maintenance
+                </li>
+              </ul>
+
+              <a href="#" class="btn btn--outline"> Contact Us </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== Call To Action ==================== -->
+      <section class="cta">
+        <div class="container">
+          <div class="cta__content">
+            <span class="section-tag"> Let's Work Together </span>
+
+            <h2 class="section-title">
+              Ready To Build Your
+              <span class="section-title__highlight"> Next Project? </span>
+            </h2>
+
+            <p class="section-description">
+              Whether you're launching a startup or growing your business, we're
+              here to transform your ideas into exceptional digital experiences.
+            </p>
+
+            <div class="cta__actions">
+              <a href="#pricing" class="btn btn--primary">
+                Start Your Project
+              </a>
+
+              <a href="#projects" class="btn btn--outline"> View Portfolio </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ==================== Footer ==================== -->
+    <footer class="footer">
+      <div class="container">
+        <!-- 4-column layout: Brand, Quick Links, Contact, Follow Us
+             (grid-template-columns set in components.css) -->
+        <div class="footer__top">
+          <!-- Brand blurb -->
+          <div class="footer__brand">
+            <a href="./index.html" class="footer__brand-title">Lumino Digital</a>
+
+            <p class="footer__description">
+              We build modern digital experiences that help businesses grow and
+              succeed online.
+            </p>
+          </div>
+
+          <!-- Quick links to in-page sections -->
+          <div class="footer__links">
+            <h3 class="footer__title">Quick Links</h3>
+
+            <ul class="footer__list">
+              <li><a href="#process">Process</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#pricing">Pricing</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact details -->
+          <div class="footer__contact">
+            <h3 class="footer__title">Contact</h3>
+
+            <ul class="footer__list">
+              <li>hello@luminodigital.com</li>
+              <li>+1 (234) 567-890</li>
+              <li>New York, USA</li>
+            </ul>
+          </div>
+
+          <!-- Social icon links -->
+          <div class="footer__social">
+            <h3 class="footer__title">Follow Us</h3>
+
+            <div class="footer__icons">
+              <a href="#" aria-label="GitHub" target="_blank" rel="noopener noreferrer"
+                ><i class="fa-brands fa-github" aria-hidden="true"></i
+              ></a>
+              <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"
+                ><i class="fa-brands fa-linkedin" aria-hidden="true"></i
+              ></a>
+              <a href="#" aria-label="Twitter" target="_blank" rel="noopener noreferrer"
+                ><i class="fa-brands fa-twitter" aria-hidden="true"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copyright bar -->
+        <div class="footer__bottom">
+          <p>© 2026 Lumino Digital. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

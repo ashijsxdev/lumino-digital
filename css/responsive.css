@@ -1,0 +1,356 @@
+/* =========================================================
+   RESPONSIVE.CSS
+   Pure CSS responsive layout (no JavaScript).
+   Mobile navigation is handled with the checkbox hack.
+========================================================= */
+
+/* =========================
+   Mobile Navbar Toggle (base rules, works at all sizes)
+========================= */
+
+.navbar__burger {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  z-index: var(--z-nav-toggle);
+}
+
+.navbar__burger-line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    width 0.3s ease;
+}
+
+/* =========================================================
+   Breakpoint: <= 1200px
+   (large screens, minor container tightening only)
+========================================================= */
+
+@media (max-width: 1200px) {
+  .container {
+    width: min(100% - 3rem, var(--container-width));
+  }
+}
+
+/* =========================================================
+   Breakpoint: <= 1440px
+   Testimonial cards are 450px min-width; 3 of them + gaps need
+   ~1398px. The testimonials section gets its own 1450px container
+   cap (see components.css) so row layout fits above this breakpoint;
+   below it, the viewport can't spare that much width, so stack
+   instead of overflowing.
+========================================================= */
+
+@media (max-width: 1440px) {
+  .testimonials__grid {
+    flex-direction: column;
+    margin-top: var(--space-6);
+    gap: var(--space-6);
+  }
+
+  .testimonial-card,
+  .testimonial-card--active {
+    width: 100%;
+    min-width: 0;
+    min-height: auto;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* =========================================================
+   Breakpoint: <= 1024px  (tablets / small laptops)
+========================================================= */
+
+@media (max-width: 1024px) {
+  :root {
+    --h1: 3.2rem;
+    --h2: 2.4rem;
+  }
+
+  .hero__wrapper {
+    gap: 3rem;
+  }
+
+  .services__grid,
+  .projects__grid,
+  .process__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* 3 pricing cards don't split evenly into 2 columns without
+     an awkward gap, so stretch them full-width instead */
+  .pricing__grid {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin-inline: auto;
+  }
+
+  .pricing-card--popular {
+    grid-column: auto;
+    margin-block: 0;
+  }
+
+  .footer__top {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: var(--space-7);
+  }
+
+  .trusted__logos {
+    gap: var(--space-6);
+  }
+}
+
+/* =========================================================
+   Breakpoint: <= 768px  (tablets / mobile nav kicks in)
+========================================================= */
+
+@media (max-width: 768px) {
+  :root {
+    --h1: 2.5rem;
+    --h2: 1.9rem;
+    --space-8: 56px;
+    --space-9: 72px;
+  }
+
+  /* ---------- Navbar ---------- */
+  .navbar {
+    position: relative;
+    height: 72px;
+  }
+
+  .navbar__burger {
+    display: flex;
+  }
+
+  .navbar__menu {
+    display: block;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      max-height 0.5s ease-in-out,
+      opacity 0.4s ease,
+      visibility 0.5s;
+    z-index: var(--z-nav-menu);
+  }
+
+  .navbar__list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: var(--space-2) var(--space-5) 0;
+  }
+
+  .navbar__item {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .navbar__link {
+    display: block;
+    padding: var(--space-4) 0;
+  }
+
+  .navbar__link::after {
+    display: none;
+  }
+
+  .navbar__actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-3);
+    padding: var(--space-5);
+  }
+
+  .navbar__actions .btn {
+    width: 100%;
+  }
+
+  .nav-toggle:checked ~ .navbar__menu {
+    max-height: 600px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-toggle:checked ~ .navbar__burger .navbar__burger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .nav-toggle:checked ~ .navbar__burger .navbar__burger-line:nth-child(2) {
+    opacity: 0;
+    width: 0;
+  }
+
+  .nav-toggle:checked ~ .navbar__burger .navbar__burger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* ---------- Hero ---------- */
+  .hero__wrapper {
+    grid-template-columns: 1fr;
+    gap: var(--space-7);
+    text-align: center;
+  }
+
+  .hero__description {
+    margin-inline: auto;
+  }
+
+  .hero__actions {
+    justify-content: center;
+  }
+
+  .hero__image {
+    order: 2;
+  }
+
+  /* ---------- Grids -> single column ---------- */
+  .services__grid,
+  .projects__grid,
+  .process__grid,
+  .pricing__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* .pricing-card--popular reset already applied at the 1024px
+     breakpoint above and continues to cascade down here */
+
+  /* ---------- CTA ---------- */
+  .cta__content {
+    padding: var(--space-6) var(--space-5);
+  }
+
+  /* ---------- Footer ---------- */
+  .footer__top {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    text-align: center;
+    justify-items: center;
+  }
+
+  .footer__description {
+    max-width: 100%;
+    margin-inline: auto;
+  }
+
+  .footer__list {
+    align-items: center;
+  }
+
+  .footer__icons {
+    justify-content: center;
+  }
+}
+
+/* =========================================================
+   Breakpoint: <= 480px  (small phones)
+========================================================= */
+
+@media (max-width: 480px) {
+  :root {
+    --h1: 2rem;
+    --h2: 1.6rem;
+    --space-7: 32px;
+    --space-8: 40px;
+    --space-9: 48px;
+    --section-gap: 56px;
+  }
+
+  /* ---------- Navbar ---------- */
+  .navbar__logo {
+    font-size: 1.4rem;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero__badge {
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  .hero__description {
+    font-size: 1rem;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* ---------- Trusted logos ---------- */
+  .trusted__logos {
+    gap: var(--space-5);
+  }
+
+  .trusted__logos i {
+    font-size: 1.5rem;
+  }
+
+  /* ---------- Card padding (Services / Projects / Process) ---------- */
+  .service-card,
+  .project-card__content,
+  .process-card {
+    padding: var(--space-5);
+  }
+
+  /* ---------- Pricing ---------- */
+  .pricing-card {
+    padding: var(--space-6) var(--space-5);
+  }
+
+  .pricing-card__price {
+    font-size: 3rem;
+  }
+
+  .pricing-card__currency {
+    font-size: 1.5rem;
+  }
+
+  .pricing-card__period {
+    font-size: 1.1rem;
+  }
+
+  /* ---------- Testimonials ---------- */
+  .testimonial-card {
+    padding: var(--space-5);
+  }
+
+  .testimonial-card__quote {
+    font-size: 1.15rem;
+  }
+
+  .testimonial-card__name {
+    font-size: 1.25rem;
+  }
+
+  /* ---------- CTA ---------- */
+  .cta__content {
+    padding: var(--space-5) var(--space-4);
+  }
+
+  .cta__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* ---------- Footer ---------- */
+  .footer__icons {
+    gap: var(--space-3);
+  }
+}
