@@ -94,7 +94,7 @@ npx serve .
 
 ## 🔗 Live Demo
 
-> Add your GitHub Pages / Netlify / Vercel link here once deployed.
+https://lumino-digital.netlify.app/
 
 ## 🩹 Fixed in this revision
 
